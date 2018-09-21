@@ -4,25 +4,33 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-   [SerializeField] private GameObject player;
-    [SerializeField]float force;
+    [SerializeField] float force;
     Rigidbody2D rbPlayer;
 
     private void Start()
     {
-        player = gameObject;
-        rbPlayer = player.GetComponent<Rigidbody2D>();
+        rbPlayer = GetComponent<Rigidbody2D>();
     }
 
-    public void LeftForce()
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.RightArrow)) MoveRight();
+        else if (Input.GetKey(KeyCode.LeftArrow)) MoveLeft();
+    }
+
+    public void MoveLeft()
     {
         print("left click");
-        rbPlayer.AddForce(Vector2.left * force);
+        //rbPlayer.AddForce(Vector2.left * force);
+        transform.Translate(Vector3.left * force/100 * Time.deltaTime); 
     }
 
-    public void RightForce()
+    public void MoveRight()
     {
         print("right click");
-        rbPlayer.AddForce(Vector2.right * force);
+        //rbPlayer.AddForce(Vector2.right * force);
+        rbPlayer.velocity = (Vector2.right * force);
     }
+
+    
 }
