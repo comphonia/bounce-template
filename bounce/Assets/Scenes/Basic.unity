@@ -307,8 +307,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 280492751}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.35287696, y: 0.012593193, z: -0.020507812}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.338, y: 0.012593193, z: -0.020507812}
+  m_LocalScale: {x: 0.998, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1323235708}
   m_RootOrder: 3
@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 526799203}
   m_Layer: 0
   m_Name: BlackBar (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 653696350}
   m_Layer: 0
   m_Name: BlackBar
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 727104174}
   m_Layer: 0
   m_Name: OrangeBar
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1446,7 +1446,7 @@ GameObject:
   - component: {fileID: 1623266901}
   m_Layer: 0
   m_Name: BlackBar (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1768,7 +1768,7 @@ GameObject:
   - component: {fileID: 1846400725}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1801,7 +1801,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1846400724}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: e311cc7fc6c582e4c9775a710f6db9da, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1890,7 +1890,7 @@ GameObject:
   - component: {fileID: 2025764108}
   m_Layer: 0
   m_Name: BlackBar (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

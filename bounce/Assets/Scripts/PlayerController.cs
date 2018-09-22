@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour {
     public void MoveLeft()
     {
         print("left click");
-        //rbPlayer.AddForce(Vector2.left * force);
+        rbPlayer.AddForce(Vector2.left * force*Time.);
         transform.Translate(Vector3.left * force/100 * Time.deltaTime); 
     }
 
@@ -32,5 +32,14 @@ public class PlayerController : MonoBehaviour {
         rbPlayer.velocity = (Vector2.right * force);
     }
 
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (rbPlayer.velocity.y >= 0 && collision.gameObject.tag == "Ground")
+        {
+            Vector3 direction = collision.
+            rbPlayer.AddForce()
+        }
+    }
+
+
 }
