@@ -10,6 +10,10 @@ public class YellowBlock : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
+            Vector2 direction = collision.GetContact(0).normal;
+            direction.y = -direction.y; 
+            Debug.Log(direction); 
+            PlayerController.instance.Bounce(direction); 
             if (!dropped) GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX; 
         }
     }
