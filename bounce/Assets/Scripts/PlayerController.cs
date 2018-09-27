@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour {
             Debug.Log(collision.gameObject.name); 
             Vector2 direction = collision.GetContact(0).normal;
             //if (direction == Vector2.up)
-            if(direction.x < Mathf.Sqrt(2)/2 || direction.x > - Mathf.Sqrt(2)/2)
+            if((direction.x < Mathf.Sqrt(2)/2 || direction.x > - Mathf.Sqrt(2)/2)  &&  direction.y >= 0)
                 rbPlayer.AddForce(direction * bounceForce); 
         }
     }
