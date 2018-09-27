@@ -46,7 +46,8 @@ public class PlayerController : MonoBehaviour {
         Debug.Log(rbPlayer.velocity.y); 
         if ( collision.gameObject.tag == "Ground")
         {
-            Vector2 direction = collision.GetContact(0).normal;
+            //Vector2 direction = collision.GetContact(0).normal;
+            Vector2 direction = Vector2.up; 
             Bounce(direction); 
         }
     }
