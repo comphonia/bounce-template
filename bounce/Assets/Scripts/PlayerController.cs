@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow)) MoveRight();
-        else if (Input.GetKeyDown(KeyCode.LeftArrow)) MoveLeft();
+        if (Input.GetKey(KeyCode.RightArrow) || RightButton.isPressed) MoveRight();
+        else if (Input.GetKey(KeyCode.LeftArrow) || LeftButton.isPressed) MoveLeft();
     }
 
     public void MoveLeft()
@@ -44,7 +44,8 @@ public class PlayerController : MonoBehaviour {
         {
             Debug.Log(collision.gameObject.name); 
             Vector2 direction = collision.GetContact(0).normal;
-            if (direction == Vector2.up)
+            //if (direction == Vector2.up)
+            if(direction.x < Mathf.Sqrt(2)/2 || direction.x > - Mathf.Sqrt(2)/2)
                 rbPlayer.AddForce(direction * bounceForce); 
         }
     }
