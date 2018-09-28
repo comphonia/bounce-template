@@ -29,34 +29,41 @@ public class PlayerController : MonoBehaviour {
 
     public void MoveLeft()
     {
-        print("left click");
-        rbPlayer.AddForce(Vector2.left * moveForce);
-        //transform.Translate(Vector3.left * force/100 * Time.deltaTime); 
+        //rbPlayer.AddForce(Vector2.left * moveForce);
+        //transform.Translate(Vector3.left * moveForce * Time.deltaTime); 
+        rbPlayer.velocity = new Vector2( - moveForce * Time.deltaTime, rbPlayer.velocity.y);
     }
 
     public void MoveRight()
     {
-        print("right click");
-        rbPlayer.AddForce(Vector2.right * moveForce);
-        //rbPlayer.velocity = (Vector2.right * moveForce);
+        //rbPlayer.AddForce(Vector2.right * moveForce);
+        //transform.Translate(Vector3.right * moveForce * Time.deltaTime);
+        rbPlayer.velocity = new Vector2(moveForce * Time.deltaTime, rbPlayer.velocity.y);
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(rbPlayer.velocity.y); 
         if ( collision.gameObject.tag == "Ground")
         {
-            //Vector2 direction = collision.GetContact(0).normal;
-            Vector2 direction = Vector2.up; 
-            Bounce(direction); 
+            Vector2 direction = collision.GetContact(0).normal;
+            //Vector2 direction = Vector2.up; 
+            CheckNBounce(direction); 
         }
+    }
+
+    void CheckNBounce(Vector2 direction)
+    {
+        //if (direction == Vector2.up)
+        Debug.Log(direction); 
+        if ((direction.x < Mathf.Sqrt(2) / 2 || direction.x > -Mathf.Sqrt(2) / 2) && direction.y >= 0)
+            Bounce(Vector2.up);
     }
 
     public void Bounce(Vector2 direction)
     {
-        //if (direction == Vector2.up)
-        if ((direction.x < Mathf.Sqrt(2) / 2 || direction.x > -Mathf.Sqrt(2) / 2) && direction.y >= 0)
-            rbPlayer.AddForce(direction * bounceForce);
+        //rbPlayer.AddForce(direction * bounceForce);
+        rbPlayer.velocity = new Vector2(rbPlayer.velocity.x, bounceForce * Time.fixedDeltaTime); 
     }
 
     private void OnDestroy()
