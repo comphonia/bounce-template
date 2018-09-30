@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour {
 
     private void OnDestroy()
     {
+
         //Instantiate(destroyedPlayerPref, transform.position, Quaternion.identity); 
     }
 
