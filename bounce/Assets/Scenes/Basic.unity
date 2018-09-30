@@ -279,8 +279,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceForce: 600
-  moveForce: 200
+  moveForce: 300
   destroyedPlayerPref: {fileID: 0}
+  movingLeft: 0
+  movingRight: 0
   invincible: 0
 --- !u!1 &280492751
 GameObject:

@@ -6,11 +6,13 @@ public class PlayerController : MonoBehaviour {
 
     public float bounceForce;
     [SerializeField] float moveForce;
-    [SerializeField] GameObject destroyedPlayerPref; 
+    [SerializeField] GameObject destroyedPlayerPref;
+    [HideInInspector] public bool movingLeft;
+    [HideInInspector] public bool movingRight; 
 
     Rigidbody2D rbPlayer;
 
-    public bool invincible = false;
+    [HideInInspector] public bool invincible = false;
 
     static public PlayerController instance; 
 
@@ -23,15 +25,48 @@ public class PlayerController : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow) || RightButton.isPressed) MoveRight();
-        else if (Input.GetKey(KeyCode.LeftArrow) || LeftButton.isPressed) MoveLeft();
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            movingLeft = true;
+            StartCoroutine(MovingLeft());
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow)) 
+        {
+            movingRight = true;
+            StartCoroutine(MovingRight()); 
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow)) movingLeft = false;
+        else if (Input.GetKeyUp(KeyCode.RightArrow)) movingRight = false;
+    }
+
+    public IEnumerator MovingRight()
+    {
+        while (movingRight)
+        {
+            rbPlayer.velocity = new Vector2(moveForce * Time.deltaTime, rbPlayer.velocity.y);
+            yield return null; 
+        }
+        rbPlayer.velocity = new Vector2(0, rbPlayer.velocity.y);
+        yield break; 
+    }
+
+    public IEnumerator MovingLeft()
+    {
+        while (movingLeft)
+        {
+            rbPlayer.velocity = new Vector2(-moveForce * Time.deltaTime, rbPlayer.velocity.y);
+            yield return null; 
+        }
+        rbPlayer.velocity = new Vector2(0, rbPlayer.velocity.y);
+        yield break; 
     }
 
     public void MoveLeft()
     {
         //rbPlayer.AddForce(Vector2.left * moveForce);
         //transform.Translate(Vector3.left * moveForce * Time.deltaTime); 
-        rbPlayer.velocity = new Vector2( - moveForce * Time.deltaTime, rbPlayer.velocity.y);
+        rbPlayer.velocity = new Vector2(moveForce * Time.deltaTime, rbPlayer.velocity.y);
     }
 
     public void MoveRight()
