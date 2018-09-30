@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
     Rigidbody2D rbPlayer;
 
     [HideInInspector] public bool invincible = false;
+    [HideInInspector] public bool bounceBonusActive = false; 
 
     static public PlayerController instance;
 
