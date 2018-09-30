@@ -5,13 +5,20 @@ using UnityEngine;
 public class MainCamera : MonoBehaviour {
 
     [SerializeField] Transform target;
-    [SerializeField] float offsetY; 
+    [SerializeField] float offsetY;
+    [SerializeField] float deathOffset; 
 
     private void Update()
     {
         if (target != null) {
-            FollowTarget(); 
+            FollowTarget();
+            if (transform.position.y - target.position.y >= deathOffset)
+            {
+                Destroy(target.gameObject);
+            }
         }
+
+        
         
     }
 

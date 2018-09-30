@@ -12,9 +12,13 @@ public class ScoreBar : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             ScoreManager.IncreaseScore();
+            GetComponent<BoxCollider2D>().enabled = false; 
             //GameObject destroyedBar = Instantiate(destroyedBarPref, transform.position, Quaternion.identity, transform.parent);
-            //Destroy(destroyedBar, destroyedBarLifeTime); 
-            Destroy(gameObject); 
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                transform.GetChild(i).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None; 
+            }
+            Destroy(gameObject, destroyedBarLifeTime);
         }
     }
 }

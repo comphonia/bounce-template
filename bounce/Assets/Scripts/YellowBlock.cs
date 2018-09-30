@@ -11,7 +11,8 @@ public class YellowBlock : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            if (!dropped) rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+            //if (!dropped) rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+            if (!dropped) rb.constraints = RigidbodyConstraints2D.None;
             rb.velocity = Vector2.zero; 
         }
     }

@@ -14,13 +14,16 @@ public class PlayerController : MonoBehaviour {
 
     [HideInInspector] public bool invincible = false;
 
-    static public PlayerController instance; 
+    static public PlayerController instance;
+
+    SpriteRenderer sRenderer; 
 
     private void Start()
     {
         if (instance == null) instance = this;
         else this.enabled = false; 
         rbPlayer = GetComponent<Rigidbody2D>();
+        sRenderer = GetComponent<SpriteRenderer>(); 
     }
 
     private void Update()
@@ -90,7 +93,6 @@ public class PlayerController : MonoBehaviour {
     void CheckNBounce(Vector2 direction)
     {
         //if (direction == Vector2.up)
-        Debug.Log(direction); 
         if ((direction.x < Mathf.Sqrt(2) / 2 || direction.x > -Mathf.Sqrt(2) / 2) && direction.y >= 0)
             Bounce(Vector2.up);
     }
@@ -98,12 +100,12 @@ public class PlayerController : MonoBehaviour {
     public void Bounce(Vector2 direction)
     {
         //rbPlayer.AddForce(direction * bounceForce);
-        rbPlayer.velocity = new Vector2(rbPlayer.velocity.x, bounceForce * Time.fixedDeltaTime); 
+        rbPlayer.velocity = new Vector2(0, bounceForce * Time.fixedDeltaTime); 
     }
 
     private void OnDestroy()
     {
-
+        GameMaster.instance.GameOver(); 
         //Instantiate(destroyedPlayerPref, transform.position, Quaternion.identity); 
     }
 
