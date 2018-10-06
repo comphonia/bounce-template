@@ -7,7 +7,7 @@ public class DontDestroy : MonoBehaviour
 
 
     public static DontDestroy instance = null;
-
+    public SpriteRenderer playerSprite;
     void Awake()
     {
         if (instance == null)

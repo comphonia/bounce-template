@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour {
     Rigidbody2D rbPlayer;
 
     [HideInInspector] public bool invincible = false;
-    [HideInInspector] public bool bounceBonusActive = false; 
+    [HideInInspector] public bool bounceBonusActive = false;
 
     static public PlayerController instance;
 
@@ -30,6 +30,9 @@ public class PlayerController : MonoBehaviour {
         else this.enabled = false; 
         rbPlayer = GetComponent<Rigidbody2D>();
         sRenderer = GetComponent<SpriteRenderer>();
+
+        GetComponent<SpriteRenderer>().sprite = DontDestroy.instance.playerSprite.sprite;
+
     }
 
     private void Update()
@@ -142,6 +145,7 @@ public class PlayerController : MonoBehaviour {
             rightPressed = false;
         }
     }
+
 
 
 }

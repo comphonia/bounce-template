@@ -22,6 +22,7 @@ public class SettingsManager : MonoBehaviour {
         characters[1].onClick.AddListener(delegate { SetCharacterImage(1); });
         characters[2].onClick.AddListener(delegate { SetCharacterImage(2); });
         characters[3].onClick.AddListener(delegate { SetCharacterImage(3); });
+        playerCharacter.sprite = characters[0].image.sprite;
 
     }
 
@@ -55,5 +56,9 @@ public class SettingsManager : MonoBehaviour {
         }
 
     }
+
+
+
+    
 
 }
