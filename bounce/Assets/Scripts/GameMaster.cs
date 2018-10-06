@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class GameMaster : MonoBehaviour {
 
     static public GameMaster instance;
-    [SerializeField] GameObject deathPanel;
-    [SerializeField] GameObject gameCanvas;
-    [SerializeField] GameObject menuCanvas;
+    public GameObject deathPanel;
+    public GameObject gameCanvas;
+    public GameObject menuCanvas;
 
 
 
