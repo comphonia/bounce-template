@@ -8208,6 +8208,7 @@ GameObject:
   - component: {fileID: 1543589448}
   - component: {fileID: 1543589447}
   - component: {fileID: 1543589446}
+  - component: {fileID: 1543589449}
   m_Layer: 5
   m_Name: R_button
   m_TagString: Untagged
@@ -8308,6 +8309,53 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543589444}
   m_CullTransparentMesh: 0
+--- !u!114 &1543589449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543589444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1604393903}
+          m_MethodName: RightButtonPress
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1604393903}
+          m_MethodName: RightButtonPress
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!4 &1562251482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4074115951467504, guid: 1a46ae7a95243cd4f95e97d6405b1d46,
@@ -8614,6 +8662,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1598826165}
   m_CullTransparentMesh: 0
+--- !u!114 &1604393903 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114147107618304276, guid: 35d6db9e026cd0240a5972bc8bdd91bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 728033812}
+  m_Script: {fileID: 11500000, guid: e32f8eb8743ea0a4783ed4f7b8188ac8, type: 3}
 --- !u!1001 &1611824614
 Prefab:
   m_ObjectHideFlags: 0
@@ -9837,6 +9891,7 @@ GameObject:
   - component: {fileID: 1817082520}
   - component: {fileID: 1817082519}
   - component: {fileID: 1817082518}
+  - component: {fileID: 1817082521}
   m_Layer: 5
   m_Name: L_button
   m_TagString: Untagged
@@ -9937,6 +9992,53 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1817082516}
   m_CullTransparentMesh: 0
+--- !u!114 &1817082521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1817082516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1604393903}
+          m_MethodName: LeftButtonPress
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1604393903}
+          m_MethodName: LeftButtonPress
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1001 &1829615297
 Prefab:
   m_ObjectHideFlags: 0

@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour {
 
     public float bounceForce;
     [SerializeField] float moveForce;
     [SerializeField] GameObject destroyedPlayerPref;
+
     [HideInInspector] public bool movingLeft;
     [HideInInspector] public bool movingRight; 
 
@@ -17,24 +20,26 @@ public class PlayerController : MonoBehaviour {
 
     static public PlayerController instance;
 
-    SpriteRenderer sRenderer; 
+    SpriteRenderer sRenderer;
+
+    bool leftPressed, rightPressed;
 
     private void Start()
     {
         if (instance == null) instance = this;
         else this.enabled = false; 
         rbPlayer = GetComponent<Rigidbody2D>();
-        sRenderer = GetComponent<SpriteRenderer>(); 
+        sRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || leftPressed)
         {
             movingLeft = true;
             StartCoroutine(MovingLeft());
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow)) 
+        else if (Input.GetKeyDown(KeyCode.RightArrow) || rightPressed) 
         {
             movingRight = true;
             StartCoroutine(MovingRight()); 
@@ -108,6 +113,34 @@ public class PlayerController : MonoBehaviour {
     {
         GameMaster.instance.GameOver(); 
         //Instantiate(destroyedPlayerPref, transform.position, Quaternion.identity); 
+    }
+
+  // Used by the eventtrigger component on buttons to determine key press
+    public void LeftButtonPress(bool isPressed)
+    {
+        if (isPressed)
+        {
+            movingLeft = true;
+            leftPressed = true;
+        }
+        else
+        {
+            movingLeft = false;
+            leftPressed = false;
+        }
+    }
+
+    public void RightButtonPress(bool isPressed)
+    {
+        if (isPressed)
+        {
+            movingRight = true;
+            rightPressed = true;
+        }
+        else {
+            movingRight = false;    
+            rightPressed = false;
+        }
     }
 
 
