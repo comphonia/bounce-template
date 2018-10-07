@@ -15,8 +15,8 @@ public class BlueBlock : MonoBehaviour {
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
             int direction = Random.Range(0, 2) == 0 ? -1 : 1;
             rb.velocity = Vector3.right * direction * moveSpeed;
-            Debug.Log(moveSpeed);
-            Debug.Log(rb.velocity); 
+           // Debug.Log(moveSpeed);
+          //  Debug.Log(rb.velocity); 
         }
     }
 }
