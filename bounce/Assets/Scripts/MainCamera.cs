@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour {
 
+    static public MainCamera instance; 
+
     [SerializeField] Transform target;
     [SerializeField] float offsetY;
-    [SerializeField] float deathOffset; 
+    [SerializeField] float deathOffset;
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else this.enabled = false; 
+    }
 
     private void Update()
     {
