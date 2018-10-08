@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class YellowBlock : MonoBehaviour {
+public class OrangeBlock : MonoBehaviour {
 
     bool dropped = false; 
 
