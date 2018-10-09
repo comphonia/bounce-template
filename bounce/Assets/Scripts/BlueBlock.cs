@@ -13,10 +13,9 @@ public class BlueBlock : MonoBehaviour {
         {
             moving = true; 
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            int direction = Random.Range(0, 2) == 0 ? -1 : 1;
+            int direction = Random.Range(0, 2) == 0 ? -1 : 1;       //the block moves in a random direction (right or left) when it's touched
             rb.velocity = Vector3.right * direction * moveSpeed;
-           // Debug.Log(moveSpeed);
-          //  Debug.Log(rb.velocity); 
+
         }
     }
 }

@@ -74,21 +74,6 @@ public class PlayerController : MonoBehaviour {
         yield break; 
     }
 
-    public void MoveLeft()
-    {
-        //rbPlayer.AddForce(Vector2.left * moveForce);
-        //transform.Translate(Vector3.left * moveForce * Time.deltaTime); 
-        rbPlayer.velocity = new Vector2(moveForce * Time.deltaTime, rbPlayer.velocity.y);
-    }
-
-    public void MoveRight()
-    {
-        //rbPlayer.AddForce(Vector2.right * moveForce);
-        //transform.Translate(Vector3.right * moveForce * Time.deltaTime);
-        rbPlayer.velocity = new Vector2(moveForce * Time.deltaTime, rbPlayer.velocity.y);
-
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if ( collision.gameObject.tag == "Ground")
@@ -101,21 +86,18 @@ public class PlayerController : MonoBehaviour {
 
     void CheckNBounce(Vector2 direction)
     {
-        //if (direction == Vector2.up)
         if ((direction.x < Mathf.Sqrt(2) / 2 || direction.x > -Mathf.Sqrt(2) / 2) && direction.y >= 0)
             Bounce(Vector2.up);
     }
 
     public void Bounce(Vector2 direction)
     {
-        //rbPlayer.AddForce(direction * bounceForce);
         rbPlayer.velocity = new Vector2(0, bounceForce * Time.fixedDeltaTime); 
     }
 
     private void OnDestroy()
     {
         GameMaster.instance.GameOver(); 
-        //Instantiate(destroyedPlayerPref, transform.position, Quaternion.identity); 
     }
 
   // Used by the eventtrigger component on buttons to determine key press

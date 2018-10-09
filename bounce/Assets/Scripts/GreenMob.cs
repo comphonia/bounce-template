@@ -12,7 +12,7 @@ public class GreenMob : MonoBehaviour {
         {
             GetComponent<SpriteRenderer>().color = Color.clear; 
             PlayerController.instance.invincible = true;
-            Debug.Log("invicible"); 
+            Debug.Log("Invicible!"); 
             Invoke("BackToNormal", invicDuration);
         }
     }

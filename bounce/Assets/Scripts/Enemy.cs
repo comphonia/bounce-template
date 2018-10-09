@@ -11,14 +11,12 @@ public class Enemy : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (collision.gameObject.GetComponent<PlayerController>().invincible)
+            if (collision.gameObject.GetComponent<PlayerController>().invincible) //if player is invicible, the enemy is destroyed...
             {
                 Destroy(gameObject); 
             }
-            else
+            else // ... otherwise, the player is destroyed  
             {
-                //GameObject destroyedBlock = Instantiate(destroyedBlockPref, transform.position, Quaternion.identity, transform.parent);
-                //Destroy(destroyedBlock, destroyedBlockLifeTime); 
                 Destroy(collision.gameObject); 
             }
         }

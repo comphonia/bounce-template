@@ -12,10 +12,10 @@ public class BlueMob : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player" && !PlayerController.instance.bounceBonusActive)
         {
-            GetComponent<SpriteRenderer>().color = Color.clear;
-            PlayerController.instance.bounceForce *= bounceBonus;
-            Debug.Log("bounce!");
-            Invoke("BackToNormal", bounceBonusDuration);
+            GetComponent<SpriteRenderer>().color = Color.clear;     //The mob disappears
+            PlayerController.instance.bounceForce *= bounceBonus;   //The bounceForce of the player is improved
+            Debug.Log("Bounce!");
+            Invoke("BackToNormal", bounceBonusDuration);    //after bounceBonusDuration the bonus is removed
         }
     }
 
