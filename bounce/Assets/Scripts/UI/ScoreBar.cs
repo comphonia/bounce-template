@@ -13,11 +13,11 @@ public class ScoreBar : MonoBehaviour {
         {
             ScoreManager.IncreaseScore();
             GetComponent<BoxCollider2D>().enabled = false; 
-            //GameObject destroyedBar = Instantiate(destroyedBarPref, transform.position, Quaternion.identity, transform.parent);
             for (int i = 0; i < transform.childCount; i++)
             {
                 transform.GetChild(i).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None; 
             }
+            GetComponent<Collider2D>().enabled = false; 
             Destroy(gameObject, destroyedBarLifeTime);
         }
     }
