@@ -21,7 +21,7 @@ public class GameMaster : MonoBehaviour {
 
     public void GameOver()
     {
-        deathPanel.SetActive(true); 
+        if (deathPanel != null) deathPanel.SetActive(true); 
     }
 
     public void Play()
