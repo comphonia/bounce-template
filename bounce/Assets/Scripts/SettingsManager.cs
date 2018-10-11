@@ -31,7 +31,7 @@ public class SettingsManager : MonoBehaviour {
     public void SetCharacterImage(int index)
     {
         logoCharacter.sprite = characters[index].image.sprite;
-       // playerCharacter.sprite = characters[index].image.sprite;
+        playerCharacter.sprite = characters[index].image.sprite;
     }
 
     //panel toggles
