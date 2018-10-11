@@ -2866,7 +2866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 306241978}
   offsetY: 0
-  deathOffset: 5
+  deathOffset: 5.2
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
