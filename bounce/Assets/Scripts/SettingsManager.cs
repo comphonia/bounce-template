@@ -11,6 +11,7 @@ public class SettingsManager : MonoBehaviour {
     [SerializeField] Image logoCharacter;
     [SerializeField] SpriteRenderer playerCharacter;
     [SerializeField] GameObject charPanel;
+    [SerializeField] GameObject infoPanel;
     [SerializeField] TextMeshProUGUI audioTMP;
 
     [SerializeField] AudioMixer audioMixer;
@@ -26,14 +27,16 @@ public class SettingsManager : MonoBehaviour {
 
     }
 
+    //sets menu image to selected sprite
     public void SetCharacterImage(int index)
     {
-        print("clicked");
         logoCharacter.sprite = characters[index].image.sprite;
-        playerCharacter.sprite = characters[index].image.sprite;
+       // playerCharacter.sprite = characters[index].image.sprite;
     }
-    bool isVisible;
 
+    //panel toggles
+
+    bool isVisible;
     public void ToggleCharacter()
     {
         isVisible = !isVisible;
@@ -55,6 +58,13 @@ public class SettingsManager : MonoBehaviour {
             audioTMP.text = "";
         }
 
+    }
+
+    bool isInfo;
+    public void ToggleInfo()
+    {
+        isInfo = !isInfo;
+        infoPanel.SetActive(isInfo);
     }
 
 
