@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour {
         rbPlayer = GetComponent<Rigidbody2D>();
         sRenderer = GetComponent<SpriteRenderer>();
 
+        if(DontDestroy.instance != null)
         GetComponent<SpriteRenderer>().sprite = DontDestroy.instance.playerSprite.sprite;
 
     }
@@ -97,7 +98,8 @@ public class PlayerController : MonoBehaviour {
 
     private void OnDestroy()
     {
-        GameMaster.instance.GameOver(); 
+            GameMaster.instance.GameOver();
+       
     }
 
   // Used by the eventtrigger component on buttons to determine key press

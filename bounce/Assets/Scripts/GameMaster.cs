@@ -18,7 +18,6 @@ public class GameMaster : MonoBehaviour {
         else this.enabled = false; 
     }
 
-
     public void GameOver()
     {
         if (deathPanel != null) deathPanel.SetActive(true); 
