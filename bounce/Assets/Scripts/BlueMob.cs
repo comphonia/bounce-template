@@ -14,7 +14,6 @@ public class BlueMob : MonoBehaviour {
         {
             GetComponent<SpriteRenderer>().color = Color.clear;     //The mob disappears
             PlayerController.instance.bounceForce *= bounceBonus;   //The bounceForce of the player is improved
-            Debug.Log("Bounce!");
             Invoke("BackToNormal", bounceBonusDuration);    //after bounceBonusDuration the bonus is removed
         }
     }

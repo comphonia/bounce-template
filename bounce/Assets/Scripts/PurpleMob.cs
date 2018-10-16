@@ -14,7 +14,6 @@ public class PurpleMob : MonoBehaviour {
         {
             GetComponent<SpriteRenderer>().color = Color.clear;
             Time.timeScale = slowMotionValue;
-            Debug.Log("slowMotion"); 
             Invoke("BackToNormal", slowMotionDuration); 
         }
     }

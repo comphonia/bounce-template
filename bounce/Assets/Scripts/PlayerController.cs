@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour {
 
     private void OnDestroy()
     {
-            GameMaster.instance.GameOver();
+        if (GameMaster.instance != null) GameMaster.instance.GameOver();
        
     }
 
