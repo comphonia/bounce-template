@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour {
 
     public float bounceForce;
     [SerializeField] float moveForce;
-    [SerializeField] GameObject destroyedPlayerPref;
 
     [HideInInspector] public bool movingLeft;
     [HideInInspector] public bool movingRight; 
@@ -20,8 +19,6 @@ public class PlayerController : MonoBehaviour {
 
     static public PlayerController instance;
 
-    SpriteRenderer sRenderer;
-
     bool leftPressed, rightPressed;
 
     private void Start()
@@ -29,7 +26,6 @@ public class PlayerController : MonoBehaviour {
         if (instance == null) instance = this;
         else this.enabled = false; 
         rbPlayer = GetComponent<Rigidbody2D>();
-        sRenderer = GetComponent<SpriteRenderer>();
 
         if(DontDestroy.instance != null)
         GetComponent<SpriteRenderer>().sprite = DontDestroy.instance.playerSprite.sprite;
@@ -99,7 +95,6 @@ public class PlayerController : MonoBehaviour {
     private void OnDestroy()
     {
         if (GameMaster.instance != null) GameMaster.instance.GameOver();
-       
     }
 
   // Used by the eventtrigger component on buttons to determine key press

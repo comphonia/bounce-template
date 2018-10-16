@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-    [SerializeField] GameObject destroyedBlockPref;
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")

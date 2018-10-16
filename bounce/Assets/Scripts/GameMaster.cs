@@ -8,7 +8,6 @@ public class GameMaster : MonoBehaviour {
     static public GameMaster instance;
     public GameObject deathPanel;
     public GameObject gameCanvas;
-    public GameObject menuCanvas;
 
 
 
@@ -25,7 +24,6 @@ public class GameMaster : MonoBehaviour {
 
     public void Play()
     {
-        menuCanvas.SetActive(false);
         gameCanvas.SetActive(true);
     }
 

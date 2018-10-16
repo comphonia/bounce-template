@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ScoreBar : MonoBehaviour {
-
-    [SerializeField] GameObject destroyedBarPref;
+    
     [SerializeField] float destroyedBarLifeTime; 
 
     private void OnTriggerEnter2D(Collider2D collision)
